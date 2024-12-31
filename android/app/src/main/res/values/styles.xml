@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting -->
+    <style name="LaunchTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Use a plain white background or a minimal placeholder while Flutter initializes -->
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <!-- Theme applied to the Android Window once the process has started -->
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Default background for the app after the splash screen -->
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+</resources>

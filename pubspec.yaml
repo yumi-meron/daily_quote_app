@@ -1,0 +1,59 @@
+name: daily_quotes
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^4.0.0
+
+  shared_preferences: ^2.3.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # flutter_native_splash: ^2.2.16
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - 'assets/images/favorite.jpeg'
+    - 'assets/images/favorite2.jpeg'
+
+    - 'assets/images/general.jpeg'
+    - 'assets/images/gym.jpeg'
+    - 'assets/images/happiness.jpeg'
+    - 'assets/images/motivation.jpeg'
+    - 'assets/images/mot.webp'
+    - 'assets/images/logo.jpeg'
+    - 'assets/images/self_love.jpeg'
+    - 'assets/images/images.png'
+    - 'assets/images/motivation2.jpeg'
+    - 'assets/images/general2.jpeg'
+    - 'assets/images/general3.jpeg'
+
+flutter_icons:
+android: true
+ios: true
+image_path: "assets/images/logo.jpeg"  
+
+# flutter_native_splash:
+#   background_color: "#E6E6FA" # Lavender
+#   gradient:
+#     colors: ["#E6E6FA", "#BDBDDC"]
+#     begin: topLeft
+#     end: bottomRight
+#   # logo: assets/logo.png # Optionally use an image/logo
+#   android: true
+#   ios: true
+#   web: false
+
+    
+
