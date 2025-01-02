@@ -1,3 +1,1 @@
-# daily_quotes
-
-A new Flutter project.
+# daily_quote_app
