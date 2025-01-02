@@ -42,11 +42,11 @@ class _CategoryPageState extends State<CategoryPage> {
     });
   }
 
-// Fetch quotes based on the category title.
+  // Fetch quotes based on the category title.
   Future<void> _fetchQuotes() async {
     try {
       List<Quote> fetchedQuotes = []; // Initialize fetchedQuotes
-      print(widget.title);
+      // print(widget.title);
 
       // Fetch quotes based on the category.
       if (widget.title == 'Today\'s Quotes') {
@@ -85,16 +85,16 @@ class _CategoryPageState extends State<CategoryPage> {
   // Toggle favorite status for the current quote.
   Future<void> _toggleFavorite() async {
     try {
-      final quote =
-          quotes[currentQuoteIndex]; // Access the quote directly from the list.
+      final quote = quotes[currentQuoteIndex]; 
+      quote.toggleLiked(); // Toggle the like status immediately
+      setState(() {}); // Force a rebuild to update UI
+
       final response = await apiService.addFavoriteQuote(quote);
-      if (response) {
+      if (!response) {
         setState(() {
-          quote.toggleLiked(); // Toggle the like status of the current quote.
+          quote.toggleLiked(); // Revert like status if API fails
         });
-      } else {
-        throw Exception('Failed to update favorite');
-      }
+      } 
     } catch (e) {
       // Show an error message if the favorite operation fails.
       ScaffoldMessenger.of(context).showSnackBar(
@@ -179,13 +179,15 @@ class _CategoryPageState extends State<CategoryPage> {
               },
             ),
             IconButton(
-              icon: Icon(quotes.isNotEmpty && quotes[currentQuoteIndex].liked
-                  ? Icons.favorite
-                  : Icons.favorite_outline),
+              icon: Icon(
+                quotes.isNotEmpty && quotes[currentQuoteIndex].liked
+                    ? Icons.favorite
+                    : Icons.favorite_outline,
+              ),
               iconSize: 40,
               color: quotes.isNotEmpty && quotes[currentQuoteIndex].liked
                   ? Colors.red
-                  : null,
+                  : null, 
               onPressed: _toggleFavorite,
             ),
           ],
