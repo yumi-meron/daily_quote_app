@@ -25,11 +25,11 @@ The Quote App is a mobile application that allows users to scroll through an end
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/quote-app.git
+   git clone https://github.com/yumi-meron/daily_quote_app/
    ```
 2. Navigate to the project folder:
    ```bash
-   cd quote-app
+   cd daily_quote_app
    ```
 3. Install dependencies:
    ```bash
